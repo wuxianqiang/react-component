@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  react的事件都会委托给document来做
+  
+  <button></button>
+
+  <script>
+    // 这里加了属性，组件的属性
+    this.document.component = this // 赋值给组件的实例，DOM节点和组件是关联起来的
+    // 组件
+    onClick=trigger(event, 'add')
+    // 全局函数，事件都委托到这里了
+    window.trigger = (event, method) => {
+      // 这里可以调用
+      component = event.target.component
+      component[method].bind(component)
+    }
+
+    // DOM
+    // setState可能是异步的问题
+    // 会智能判断是否是批量更新
+    // 缓存到数组中，多次更新可能会合并成一次
+
+    // 批量更新，
+    // 脏组件，组件的状态和界面的显示不一样了
+    // 事件的时候会开启批量更新
+    // 事物，概念
+    // 5,6视频
+  </script>
+</body>
+</html>
